@@ -9,14 +9,17 @@ int n;
 int* reverseArray(int arr[]){
     //get the first and last index of the array
     int i = 0;
-    int j = n - 1;
-    while (i < j){
+    //swap the first and last element to reverse array
+    //After the swap just go towards middle element of array from both the side
+    //last index would be (n - 1 - i) of not reversed array
+    //So condition would be i < (n - 1 - i)
+    // 2*i < (n - 1)
+    while (2*i < (n - 1)){
         //swap the values from first and last index of not reversed array
         int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+        arr[i] = arr[(n - 1) - i];
+        arr[(n - 1) - i] = temp;
         i++;
-        j--;
     }
     //return the array
     return arr;

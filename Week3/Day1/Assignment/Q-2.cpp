@@ -11,12 +11,6 @@ class LinkedListNode{
         //stores address to the next node
         LinkedListNode *next;
 
-        //constructor to create a node
-        // LinkedListNode(){
-        //     this->data = NULL;
-        //     this->next = NULL;
-        // }
-
         LinkedListNode(int data){
             this->data = data;
             this->next = NULL;
