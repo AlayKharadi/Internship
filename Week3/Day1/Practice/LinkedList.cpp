@@ -49,8 +49,12 @@ class LinkedList{
     //Print the linkedList
     void PrintList(){
         //Iterate through the linked List to print all the nodes
+        if(this->size == 0){
+            cout << "Linked is empty" << endl;
+            return;
+        }
         cout << "Linked List: ";
-        LinkedListNode *temp = Head;
+        LinkedListNode *temp = this->Head;
         while(temp->next != NULL){
             cout << temp->getData() << "->";
             temp = temp->next;
@@ -87,10 +91,9 @@ class LinkedList{
             newNode->next = this->Head;
             this->Head = newNode;
         } else {
-            LinkedListNode *temp = Head;
+            LinkedListNode *temp = this->Head;
             for(int i = 1; i < (position - 1); i++){
                 temp = temp->next;
-                i++;
             }
 
             newNode->next = temp->next;
@@ -117,10 +120,9 @@ class LinkedList{
             delete flag;
         } else {
             
-            LinkedListNode *temp = Head;
+            LinkedListNode *temp = this->Head;
             for(int i = 1; i < (position - 1); i++){
                 temp = temp->next;
-                i++;
             }
 
             //Node to delete
